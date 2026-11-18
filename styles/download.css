@@ -46,7 +46,13 @@ main > p {
   gap: 5px;
 }
 
-.download-panel > button {
+.download-panel > a {
+  margin: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.download-panel > a > button {
   margin: 0;
   border: none;
   background: black;
