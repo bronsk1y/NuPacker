@@ -1,0 +1,65 @@
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 300px;
+  gap: 50px;
+}
+
+main > p {
+  margin: 0;
+  font-size: 24px;
+}
+
+.important {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  background: #2e9aff;
+  padding: 20px;
+  width: 500px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.download-header {
+  font-size: 52px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.download-header > :last-child {
+  font-size: 42px;
+  font-weight: 600;
+  opacity: 0.3;
+  margin: 0;
+}
+
+.download-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.download-panel > button {
+  margin: 0;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px 10px;
+  width: 300px;
+  padding: 5px;
+  font-size: 18px;
+  height: 50px;
+  cursor: pointer;
+}

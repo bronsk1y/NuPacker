@@ -1,0 +1,202 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 300px;
+  gap: 150px;
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 500px;
+  flex-shrink: 0;
+}
+
+.block > h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.block > p {
+  margin: 0;
+  color: gray;
+  font-size: 20px;
+}
+
+.block > a {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+}
+
+.block > a > button {
+  margin: 0;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px 10px;
+  width: 300px;
+  padding: 5px;
+  font-size: 18px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.block > button:hover {
+  background: #222;
+}
+
+.mockup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+}
+
+.mockup-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.mockup-bar > span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.mockup-tabs {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 13px;
+}
+
+.tab {
+  padding: 9px 16px;
+  color: gray;
+  border-right: 1px solid #d9d9d9;
+}
+
+.tab.active {
+  color: black;
+  background: #f5f5f5;
+}
+
+.mockup-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.mockup-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  width: 65%;
+  border-right: 1px solid #d9d9d9;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.field > span:first-child {
+  font-size: 12px;
+  color: gray;
+}
+
+.field > .val {
+  font-size: 12px;
+  background: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+
+.mockup-tree {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  font-size: 12px;
+  color: gray;
+}
+
+.node {
+  padding: 4px 0;
+}
+
+.node.active {
+  color: black;
+}
+
+.node.indent {
+  padding-left: 14px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.features > h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 300;
+}
+
+.features > section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px 40px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature > img {
+  align-self: center;
+}
+
+.feature > h3 {
+  margin: 0;
+  font-size: 24px;
+  align-self: center;
+  font-weight: 600;
+}
+
+.feature > p {
+  margin: 0;
+  color: gray;
+  font-size: 18px;
+}

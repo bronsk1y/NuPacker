@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NuPacker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/body.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          width="30"
+          height="30"
+          src="images/applogo-light.svg"
+          alt="nupack-logo"
+        />
+        <a class="header" href="index.html">NuPacker</a>
+      </div>
+      <nav>
+        <a href="documentation/index.html">Documentation</a>
+        <a href="download/index.html">Download</a>
+      </nav>
+    </header>
+    <main class="hero">
+      <div class="description">
+        <div class="block">
+          <h1>From a project file to NuGet in a few clicks.</h1>
+          <p>
+            NuPacker allows you to easily build a .nupkg file and publish it to
+            NuGet.
+          </p>
+          <a href="download/index.html">
+            <button>
+              <img width="20" height="20" src="images/windows.svg" />
+              <span>Download for Windows</span>
+            </button>
+          </a>
+        </div>
+        <div class="mockup">
+          <div class="mockup-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-tabs">
+            <div class="tab active">MyLibrary.csproj</div>
+            <div class="tab">Program.cs</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-fields">
+              <div class="field">
+                <span>PackageId</span><span class="val">MyLibrary</span>
+              </div>
+              <div class="field">
+                <span>Version</span><span class="val">1.4.0</span>
+              </div>
+              <div class="field">
+                <span>Authors</span><span class="val">Alex</span>
+              </div>
+              <div class="field">
+                <span>Description</span><span class="val">Helpers for…</span>
+              </div>
+            </div>
+            <div class="mockup-tree">
+              <div class="node active">MyLibrary.csproj</div>
+              <div class="node indent">PropertyGroup</div>
+              <div class="node indent">ItemGroup</div>
+              <div class="node">Program.cs</div>
+              <div class="node">README.md</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <h2>Features</h2>
+        <section>
+          <div class="feature">
+            <img width="100" height="100" src="images/edit-metadata.svg" />
+            <h3>Edit metadata as fields</h3>
+            <p>
+              Change project metadata without manual XML coding. Just select a
+              tag in the visual tree to instantly edit its text value or
+              attributes in simple input fields.
+            </p>
+          </div>
+          <div class="feature">
+            <img width="100" height="100" src="images/file-tree.svg" />
+            <h3>A tree built for packages</h3>
+            <p>
+              Browse project files and package tags side by side, in a tree that
+              just makes sense.
+            </p>
+          </div>
+          <div class="feature">
+            <img width="100" height="100" src="images/editor.svg" />
+            <h3>Built-in code editor</h3>
+            <p>
+              Switch to a full editor with syntax highlighting whenever you want
+              more control.
+            </p>
+          </div>
+          <div class="feature">
+            <img width="100" height="100" src="images/nuget.svg" />
+            <h3>Pack and publish in one click</h3>
+            <p>
+              Run dotnet pack and push the result to NuGet without a terminal.
+            </p>
+          </div>
+          <div class="feature">
+            <img width="100" height="100" src="images/theme.svg" />
+            <h3>Light and dark themes</h3>
+            <p>Switch the whole interface to match how you like to work.</p>
+          </div>
+          <div class="feature">
+            <img width="100" height="100" src="images/keyboard-shortcuts.svg" />
+            <h3>Keyboard-first workflow</h3>
+            <p>
+              Open, save, and switch tabs with shortcuts that keep you in the
+              flow.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-top">
+        <div class="logo">
+          <a class="header" href="index.html">NuPacker</a>
+        </div>
+        <nav>
+          <a href="documentation/index.html">Documentation</a>
+          <a href="download/index.html">Download</a>
+          <a href="https://github.com/bronsk1y/NuPacker">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NuPacker</p>
+      </div>
+    </footer>
+  </body>
+</html>

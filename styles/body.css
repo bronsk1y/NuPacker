@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin: 0px;
+  font-size: 32px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+
+a {
+  margin: 0px;
+  text-decoration: none;
+  color: black;
+}

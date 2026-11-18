@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NuPacker - Documentation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/body.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/documentation.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          width="30"
+          height="30"
+          src="../images/applogo-light.svg"
+          alt="nupack-logo"
+        />
+        <a class="header" href="../index.html">NuPacker</a>
+      </div>
+      <nav>
+        <a href="index.html">Documentation</a>
+        <a href="../download/index.html">Download</a>
+      </nav>
+    </header>
+    <main class="documentation">
+      <div class="table-of-contents">
+        <a href="#overview">Overview</a>
+        <a href="#get-started" class="bold">Get started</a>
+        <a href="#editor" class="bold">Editor</a>
+        <a href="#interface" class="bold">Interface</a>
+      </div>
+      <div class="docs-content-wrapper">
+        <div id="overview" class="docs-content">
+          <h1>Overview</h1>
+          <hr />
+          <p>
+            NuPacker takes a project file to a published NuGet package in four
+            stages. This page shows where each stage happens and where to find
+            the details.
+          </p>
+
+          <h2>The path of a package</h2>
+          <ol class="pipeline">
+            <li class="stage">
+              <h3>Open</h3>
+              <p>
+                Load a <span class="block">.csproj</span> or
+                <span class="block">.nuspec</span> file.
+              </p>
+              <a class="link" href="#get-started">Get started</a>
+            </li>
+            <li class="stage">
+              <h3>Edit</h3>
+              <p>Change metadata as fields or work in the code editor.</p>
+              <a class="link" href="#editor">Editor</a>
+            </li>
+            <li class="stage">
+              <h3>Build</h3>
+              <p>
+                Pack the project into a <span class="block">.nupkg</span> file.
+              </p>
+              <a class="link" href="#build-publish">Build and publish</a>
+            </li>
+            <li class="stage">
+              <h3>Publish</h3>
+              <p>Send the package to nuget.org.</p>
+              <a class="link" href="#build-publish">Build and publish</a>
+            </li>
+          </ol>
+
+          <h2>Finding your way around</h2>
+          <p>The main window has four areas.</p>
+          <div class="window-map">
+            <div class="map-area">
+              <span class="pin">1</span>Menu and toolbar
+            </div>
+            <div class="map-middle">
+              <div class="map-area map-editor">
+                <span class="pin">2</span>Editor
+              </div>
+              <div class="map-area map-tree">
+                <span class="pin">3</span>File tree
+              </div>
+            </div>
+            <div class="map-area"><span class="pin">4</span>Output</div>
+          </div>
+          <ol>
+            <li>
+              <span
+                ><span class="bold">Menu and toolbar</span> hold the file, edit,
+                build and publish actions.
+                <a class="link" href="#interface">Interface</a></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Editor</span> shows every opened file on its
+                own tab. <a class="link" href="#editor">Editor</a></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">File tree</span> lists the project and its
+                files. <a class="link" href="#interface">Interface</a></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Output</span> shows messages from building
+                and publishing.
+                <a class="link" href="#interface">Interface</a></span
+              >
+            </li>
+          </ol>
+
+          <h2>Quick answers</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">How do I change the package version?</span>
+                Open the <span class="block">.csproj</span> file, select the
+                <span class="block">Version</span> tag and edit its value.
+                <a class="link" href="#editor">Editor</a></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Where does the built package go?</span> Into
+                the <span class="block">bin</span> folder of the project, inside
+                the folder named after the selected configuration.
+                <a class="link" href="#build-publish"
+                  >Build and publish</a
+                ></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Why does publishing fail?</span> The most
+                common reason is a missing API key. Enter it in
+                <span class="bold">Settings > NuGet</span>.
+                <a class="link" href="#settings">Settings</a></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Can I build a .nuspec project?</span> Not
+                yet. A <span class="block">.nuspec</span> file can be opened and
+                edited, but building is available for
+                <span class="block">.csproj</span> projects.
+                <a class="link" href="#build-publish"
+                  >Build and publish</a
+                ></span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">What do I need before installing?</span> See
+                the requirements in
+                <a class="link" href="#get-started">Get started</a>.</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="get-started" class="docs-content">
+          <h1>Get started with NuPacker</h1>
+          <hr />
+          <p>
+            This section explains how to install NuPack and what the
+            requirements are.
+          </p>
+          <h2>Pre-installation Requirements</h2>
+          <ol>
+            <li>
+              <span
+                >The computer must have <span class="bold">Windows 10</span> or
+                higher installed.</span
+              >
+            </li>
+            <li>
+              <span
+                >The <span class="bold">NuGet</span> command-line utility must
+                be installed to upload package files. If it is not available,
+                you can install it
+                <a class="link" href="https://www.nuget.org/downloads">here</a
+                >.</span
+              >
+            </li>
+          </ol>
+          <h2>Installing NuPacker</h2>
+          <ol>
+            <li>
+              <span>
+                Download the
+                <a class="link" href="#">installer file</a>.</span
+              >
+            </li>
+            <li>
+              <span>Run the installer and follow the instructions.</span>
+            </li>
+            <li>
+              <span>Open NuPack and configure it if necessary.</span>
+            </li>
+          </ol>
+          <h2>Opening Files</h2>
+          <p>
+            NuPack works with
+            <span class="block">.nuspec</span> and
+            <span class="block">.csproj</span> project files. To open a file,
+            follow the steps below:
+          </p>
+          <ol>
+            <li>
+              <span>
+                Open NuPacker and click on the
+                <span class="bold">File > Open File</span> tab.</span
+              >
+            </li>
+            <li>
+              <span>Select your project file.</span>
+            </li>
+          </ol>
+          <p>Once successfully loaded, a tree file will appear on the right.</p>
+        </div>
+        <div id="editor" class="docs-content">
+          <h1>Editor</h1>
+          <hr />
+          <p>
+            NuPacker opens project files in one of two views, depending on the
+            file and what you're editing.
+          </p>
+
+          <h2>Code Editor</h2>
+          <p>
+            Files like <span class="block">.cs</span> and
+            <span class="block">.txt</span> open in a full code editor with
+            syntax highlighting and line numbers.
+          </p>
+          <ul>
+            <li>
+              <span>Syntax highlighting for C# and plain text files.</span>
+            </li>
+            <li>
+              <span>Undo and redo across the entire editing session.</span>
+            </li>
+            <li>
+              <span
+                >Cut, copy and paste, available from the menu or the
+                keyboard.</span
+              >
+            </li>
+            <li>
+              <span
+                >Changes are marked with an asterisk (<span class="block"
+                  >*</span
+                >) next to the file name until saved.</span
+              >
+            </li>
+          </ul>
+
+          <h2>Simplified Editor</h2>
+          <p>
+            Project files like <span class="block">.csproj</span> and
+            <span class="block">.nuspec</span> open in a simplified view instead
+            of raw XML.
+          </p>
+          <ol>
+            <li>
+              <span
+                >Tags are shown as a tree. Tags with nested tags can be
+                expanded, tags without them show their value directly.</span
+              >
+            </li>
+            <li>
+              <span
+                >Click a tag to see its value and attributes on the right, and
+                edit them as plain fields.</span
+              >
+            </li>
+            <li>
+              <span
+                >Press <span class="bold">Save</span> to write the changes back
+                to the file.</span
+              >
+            </li>
+          </ol>
+          <p>
+            You can switch between the simplified view and the raw code editor
+            at any time using the
+            <span class="bold">Use Simplified Editor</span> /
+            <span class="bold">Use Normal Editor</span> toggle.
+          </p>
+
+          <h2>Saving</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">Save</span> writes changes to the current
+                file.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Save As</span> lets you choose a new
+                location and name.</span
+              >
+            </li>
+          </ul>
+
+          <h2>Keyboard Shortcuts</h2>
+          <table class="shortcuts">
+            <tbody>
+              <tr>
+                <td>Open file</td>
+                <td><span class="block">Ctrl + O</span></td>
+              </tr>
+              <tr>
+                <td>Save</td>
+                <td><span class="block">Ctrl + S</span></td>
+              </tr>
+              <tr>
+                <td>Save As</td>
+                <td><span class="block">Ctrl + Alt + S</span></td>
+              </tr>
+              <tr>
+                <td>Undo / Redo</td>
+                <td>
+                  <span class="block">Ctrl + Z</span> /
+                  <span class="block">Ctrl + Y</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Cut / Copy / Paste</td>
+                <td>
+                  <span class="block">Ctrl + X</span> /
+                  <span class="block">Ctrl + C</span> /
+                  <span class="block">Ctrl + V</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="interface" class="docs-content">
+          <h1>Interface</h1>
+          <hr />
+          <p>
+            This section describes the toolbar, the file tree and the output
+            panel.
+          </p>
+
+          <h2>Toolbar</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">Undo</span> and
+                <span class="bold">Redo</span> revert or restore changes in the
+                code editor.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Open</span> selects a project file.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Save</span> writes the current file to
+                disk.</span
+              >
+            </li>
+            <li>
+              <span><span class="bold">Run</span> builds the package.</span>
+            </li>
+            <li>
+              <span
+                ><span class="bold">Stop</span> cancels a running build or
+                publish.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Publish</span> sends the built package to
+                NuGet.</span
+              >
+            </li>
+          </ul>
+
+          <h2>File Tree</h2>
+          <p>
+            The project file is the root of the tree. Expand it to see the
+            folders and files next to it.
+          </p>
+          <ul>
+            <li><span>Double-click a file to open it in a new tab.</span></li>
+            <li>
+              <span
+                >Use the arrow next to a folder to expand or collapse it.</span
+              >
+            </li>
+            <li>
+              <span
+                >Type in the search field to filter by name. Folders that
+                contain a match stay visible.</span
+              >
+            </li>
+            <li>
+              <span
+                >Only <span class="block">.cs</span> and
+                <span class="block">.txt</span> files are listed. The
+                <span class="block">bin</span>,
+                <span class="block">obj</span> and
+                <span class="block">.git</span> folders are hidden.</span
+              >
+            </li>
+          </ul>
+
+          <h2>Output Panel</h2>
+          <p>
+            The panel shows the output of the build and publish commands. Colors
+            indicate the type of message:
+          </p>
+          <ul>
+            <li>
+              <span><span class="bold">Black</span> for regular messages.</span>
+            </li>
+            <li>
+              <span><span class="bold">Yellow</span> for warnings.</span>
+            </li>
+            <li>
+              <span><span class="bold">Red</span> for errors.</span>
+            </li>
+            <li>
+              <span><span class="bold">Green</span> for success messages.</span>
+            </li>
+          </ul>
+        </div>
+        <div id="build-publish" class="docs-content">
+          <h1>Build and publish</h1>
+          <hr />
+
+          <h2>Building a Package</h2>
+          <ol>
+            <li>
+              <span>Open your <span class="block">.csproj</span> file.</span>
+            </li>
+            <li>
+              <span
+                >Optionally choose the configuration in
+                <span class="bold">Settings > Build</span>.</span
+              >
+            </li>
+            <li>
+              <span>Click <span class="bold">Run</span> on the toolbar.</span>
+            </li>
+            <li><span>Follow the progress in the output panel.</span></li>
+          </ol>
+          <p>
+            Use <span class="bold">Stop</span> to cancel a build in progress.
+            Building is currently available for
+            <span class="block">.csproj</span> projects.
+            <span class="block">.nuspec</span> files can be opened and edited.
+          </p>
+
+          <h2>Publishing</h2>
+          <ol>
+            <li>
+              <span
+                >Enter your API key in
+                <span class="bold">Settings > NuGet</span>.</span
+              >
+            </li>
+            <li><span>Build the package.</span></li>
+            <li>
+              <span
+                >Click <span class="bold">Publish</span> on the toolbar.</span
+              >
+            </li>
+          </ol>
+          <p>
+            NuPacker sends the most recent
+            <span class="block">.nupkg</span> file from the
+            <span class="block">bin</span> folder of the selected configuration
+            to nuget.org. The API key is not written to the settings file.
+          </p>
+        </div>
+        <div id="settings" class="docs-content">
+          <h1>Settings</h1>
+          <hr />
+          <p>
+            Open <span class="bold">Edit > Settings</span>, change the options
+            and click <span class="bold">Save</span> to apply them.
+          </p>
+
+          <h2>General</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">Language</span>: English or Русский.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Theme</span>: System, Light or Dark.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Font Size</span>: size of the interface
+                text.</span
+              >
+            </li>
+          </ul>
+
+          <h2>Editor</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">Editor Font</span> and
+                <span class="bold">Editor Font Size</span> for the code
+                editor.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Tab Size</span> and
+                <span class="bold">Indent Unit</span> control indentation.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Line Numbers</span> shows or hides the line
+                number column.</span
+              >
+            </li>
+          </ul>
+
+          <h2>Build</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">Configuration</span>: Debug or
+                Release.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Extra pack arguments</span> are appended to
+                the pack command.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Clean before build</span> cleans the project
+                before packing.</span
+              >
+            </li>
+          </ul>
+
+          <h2>NuGet</h2>
+          <ul>
+            <li>
+              <span
+                ><span class="bold">API Key</span> is used to publish
+                packages.</span
+              >
+            </li>
+            <li>
+              <span
+                ><span class="bold">Include symbols</span> also builds and
+                publishes a symbols package.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-top">
+        <div class="logo">
+          <img
+            width="30"
+            height="30"
+            src="../images/applogo-light.svg"
+            alt="nupack-logo"
+          />
+          <a class="header" href="../index.html">NuPacker</a>
+        </div>
+        <nav>
+          <a href="index.html">Documentation</a>
+          <a href="../download/index.html">Download</a>
+          <a href="https://github.com/bronsk1y/NuPacker">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NuPacker</p>
+      </div>
+    </footer>
+    <script src="../scripts/documentation.js"></script>
+  </body>
+</html>
